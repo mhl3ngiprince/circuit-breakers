@@ -13,6 +13,18 @@ import {
   Heart
 } from 'lucide-react';
 import logo from '../assets/images/logo.png';
+
+const footerLinks = {
+  learn: [
+    { name: 'Tutorials', href: '#' },
+    { name: 'Documentation', href: '#' },
+    { name: 'Courses', href: '#' },
+  ],
+  community: [
+    { name: 'Events', href: '#' },
+    { name: 'Forum', href: '#' },
+    { name: 'Newsletter', href: '#' },
+  ],
   connect: [
     { name: 'Discord Server', href: '#' },
     { name: 'GitHub', href: '#' },
