@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Users, Lightbulb, Award } from 'lucide-react';
+import abt_robo from '../assets/images/abt_robo.png';
+import logo from '../assets/images/logo.png';
+import zweli from '../assets/images/zweli.jpg';
+import vannessa from '../assets/images/vannessa.jpg';
+import prince from '../assets/images/prince.jpg';
+import emmanuel from '../assets/images/Emmanuel.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,37 +17,49 @@ const teamMembers = [
     name: 'AWANDE GUMBI',
     role: 'President',
     description: 'Biological Science Student leading our club\'s vision for interdisciplinary AI applications in life sciences.',
-    image: '/logo.png',
+    image: logo,
   },
   {
     name: 'ZWELIE LANGENI',
     role: 'Vice President',
     description: 'Computer Science Student driving technical excellence and algorithmic innovation across our projects.',
-    image: '/zweli.jpg',
+    image: zweli,
   },
   {
     name: 'VENNESA SKOSANA',
     role: 'Secretary',
     description: 'ICT Student ensuring seamless communication and organizational excellence within our community.',
-    image: '/vannessa.jpg',
+    image: vannessa,
   },
   {
     name: 'PRINCE NGWENYA',
     role: 'Training Coordinator',
     description: 'ICT Student architecting comprehensive learning experiences and skill development programs.',
-    image: '/prince.jpg',
+    image: prince,
   },
   {
     name: 'KATLEGO NCHABELENG',
     role: 'Events Coordinator',
     description: 'ICT Student orchestrating cutting-edge events and fostering community engagement.',
-    image: '/Emmanuel.jpg',
+    image: emmanuel,
   },
   {
     name: 'RETHABILE BINANG',
     role: 'Research Officer',
     description: 'ICT Student spearheading breakthrough research initiatives in emerging AI technologies.',
-    image: '/logo.png',
+    image: logo,
+  },
+  {
+    name: 'KOKETSO',
+    role: 'ICT Student',
+    description: 'ICT Student contributing to our technical initiatives and community projects.',
+    image: logo,
+  },
+  {
+    name: 'CAYDEN JAYNEKE',
+    role: 'ICT Student',
+    description: 'ICT Student supporting our digital transformation and technical operations.',
+    image: logo,
   },
 ];
 
@@ -242,7 +260,7 @@ const About = () => {
           className="absolute left-0 bottom-0 w-1/4 h-auto pointer-events-none hidden lg:block"
         >
           <img
-            src={`${import.meta.env.BASE_URL}abt_robo.png`}
+            src={abt_robo}
             alt="AI Robot"
             className="w-full h-auto object-contain"
           />

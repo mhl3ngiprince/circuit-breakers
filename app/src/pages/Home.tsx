@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Users, Lightbulb, Target, Award, ChevronRight } from 'lucide-react';
+import abt_robo from '../assets/images/abt_robo.png';
 
 const Home = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -151,7 +152,7 @@ const Home = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={`${import.meta.env.BASE_URL}abt_robo.png`}
+                  src={abt_robo}
                   alt="AI Innovation"
                   className="w-full h-auto object-cover"
                 />

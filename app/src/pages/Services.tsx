@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Trophy, Microscope, Briefcase, ArrowRight, Check, Users, Calendar, Code } from 'lucide-react';
+import robot from '../assets/images/robot.png';
 
 const Services = () => {
   useEffect(() => {
@@ -99,7 +100,7 @@ const Services = () => {
       <section className="relative pt-32 pb-20 bg-gray-900">
         <div className="absolute inset-0 opacity-10">
           <img
-            src={`${import.meta.env.BASE_URL}robot.png`}
+            src={robot}
             alt="Background"
             className="w-full h-full object-cover"
           />

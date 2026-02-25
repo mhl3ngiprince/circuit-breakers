@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ArrowDown, Rocket, Play, Sparkles } from 'lucide-react';
+import robot from '../assets/images/robot.png';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -103,7 +104,7 @@ const Hero = () => {
         transition={{ duration: 1.5, delay: 0.5 }}
       >
         <img
-          src={`${import.meta.env.BASE_URL}robot.png`}
+          src={robot}
           alt="AI Robot"
           className="w-full h-auto object-contain animate-float"
         />

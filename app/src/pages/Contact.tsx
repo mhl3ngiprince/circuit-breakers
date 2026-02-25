@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Instagram, MessageCircle, Linkedin, Github } from 'lucide-react';
+import robot from '../assets/images/robot.png';
 
 const Contact = () => {
   useEffect(() => {
@@ -74,7 +75,7 @@ const Contact = () => {
       <section className="relative pt-32 pb-20 bg-gray-900">
         <div className="absolute inset-0 opacity-10">
           <img
-            src={`${import.meta.env.BASE_URL}robot.png`}
+            src={robot}
             alt="Background"
             className="w-full h-full object-cover"
           />

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Youtube, Twitter, MessageCircle, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,7 +45,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-emerald-500 flex items-center justify-center">
-                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Circuit Breakers" className="w-8 h-8 object-contain" />
+                <img src={logo} alt="Circuit Breakers" className="w-8 h-8 object-contain" />
               </div>
               <span className="font-semibold text-xl">Circuit Breakers</span>
             </Link>

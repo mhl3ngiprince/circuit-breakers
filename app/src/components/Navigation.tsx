@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,7 @@ const Navigation = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-emerald-500 flex items-center justify-center">
-                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Circuit Breakers" className="w-7 h-7 object-contain" />
+                <img src={logo} alt="Circuit Breakers" className="w-7 h-7 object-contain" />
               </div>
               <span className={`font-semibold text-lg ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
                 Circuit Breakers

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +62,7 @@ const Navigation = () => {
                   }}
                 />
                 <div className="absolute inset-1 rounded-full bg-black flex items-center justify-center">
-                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-6 h-6 object-contain" />
+                  <img src={logo} alt="Logo" className="w-6 h-6 object-contain" />
                 </div>
               </div>
               <span className="font-orbitron font-bold text-lg hidden sm:block gradient-text">

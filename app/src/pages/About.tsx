@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Target, Eye, Heart, Zap } from 'lucide-react';
+import robot from '../assets/images/robot.png';
+import abt_robo from '../assets/images/abt_robo.png';
 
 const About = () => {
   useEffect(() => {
@@ -74,7 +76,7 @@ const About = () => {
       <section className="relative pt-32 pb-20 bg-gray-900">
         <div className="absolute inset-0 opacity-20">
           <img
-            src={`${import.meta.env.BASE_URL}robot.png`}
+            src={robot}
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -124,7 +126,7 @@ const About = () => {
             </div>
             <div className="relative">
               <img
-                src={`${import.meta.env.BASE_URL}abt_robo.png`}
+                src={abt_robo}
                 alt="Our Story"
                 className="rounded-2xl shadow-xl w-full"
               />
