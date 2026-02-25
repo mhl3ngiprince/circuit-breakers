@@ -2,6 +2,11 @@ import { useEffect } from 'react';
 import { Target, Eye, Heart, Zap } from 'lucide-react';
 import robot from '../assets/images/robot.png';
 import abt_robo from '../assets/images/abt_robo.png';
+import logo from '../assets/images/logo.png';
+import zweli from '../assets/images/zweli.jpg';
+import vannessa from '../assets/images/vannessa.jpg';
+import prince from '../assets/images/prince.jpg';
+import emmanuel from '../assets/images/Emmanuel.jpg';
 
 const About = () => {
   useEffect(() => {
@@ -13,37 +18,49 @@ const About = () => {
       name: 'Awande Gumbi',
       role: 'President',
       description: 'Biological Science Student leading our club\'s vision for interdisciplinary AI applications.',
-      image: '/logo.png',
+      image: logo,
     },
     {
       name: 'Zwelie Langeni',
       role: 'Vice President',
       description: 'Computer Science Student driving technical excellence and algorithmic innovation.',
-      image: '/zweli.jpg',
+      image: zweli,
     },
     {
       name: 'Vennesa Skosana',
       role: 'Secretary',
       description: 'ICT Student ensuring seamless communication and organizational excellence.',
-      image: '/vannessa.jpg',
+      image: vannessa,
     },
     {
       name: 'Prince Ngwenya',
       role: 'Training Coordinator',
       description: 'ICT Student architecting comprehensive learning experiences and skill development.',
-      image: '/prince.jpg',
+      image: prince,
     },
     {
       name: 'Katlego Nchabeleng',
       role: 'Events Coordinator',
       description: 'ICT Student orchestrating cutting-edge events and fostering community engagement.',
-      image: '/Emmanuel.jpg',
+      image: emmanuel,
     },
     {
       name: 'Rethabile Binang',
       role: 'Research Officer',
       description: 'ICT Student spearheading breakthrough research initiatives in emerging AI technologies.',
-      image: '/logo.png',
+      image: logo,
+    },
+    {
+      name: 'Koketso',
+      role: 'ICT Student',
+      description: 'ICT Student contributing to our technical initiatives and community projects.',
+      image: logo,
+    },
+    {
+      name: 'Cayden Jayneke',
+      role: 'ICT Student',
+      description: 'ICT Student supporting our digital transformation and technical operations.',
+      image: logo,
     },
   ];
 
