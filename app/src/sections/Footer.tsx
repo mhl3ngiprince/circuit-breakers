@@ -78,7 +78,7 @@ const Footer = () => {
                   }}
                 />
                 <div className="absolute inset-1 rounded-full bg-black flex items-center justify-center">
-                  <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain" />
+                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-7 h-7 object-contain" />
                 </div>
               </div>
               <span className="font-orbitron font-bold text-xl gradient-text">

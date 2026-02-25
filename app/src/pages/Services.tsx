@@ -99,7 +99,7 @@ const Services = () => {
       <section className="relative pt-32 pb-20 bg-gray-900">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="/robot.png"
+            src={`${import.meta.env.BASE_URL}robot.png`}
             alt="Background"
             className="w-full h-full object-cover"
           />

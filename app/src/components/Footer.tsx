@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-emerald-500 flex items-center justify-center">
-                <img src="/logo.png" alt="Circuit Breakers" className="w-8 h-8 object-contain" />
+                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Circuit Breakers" className="w-8 h-8 object-contain" />
               </div>
               <span className="font-semibold text-xl">Circuit Breakers</span>
             </Link>

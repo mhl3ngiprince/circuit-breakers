@@ -103,7 +103,7 @@ const Hero = () => {
         transition={{ duration: 1.5, delay: 0.5 }}
       >
         <img
-          src="/robot.png"
+          src={`${import.meta.env.BASE_URL}robot.png`}
           alt="AI Robot"
           className="w-full h-auto object-contain animate-float"
         />

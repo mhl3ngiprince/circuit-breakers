@@ -151,7 +151,7 @@ const Home = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/abt_robo.png"
+                  src={`${import.meta.env.BASE_URL}abt_robo.png`}
                   alt="AI Innovation"
                   className="w-full h-auto object-cover"
                 />

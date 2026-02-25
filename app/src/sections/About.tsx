@@ -242,7 +242,7 @@ const About = () => {
           className="absolute left-0 bottom-0 w-1/4 h-auto pointer-events-none hidden lg:block"
         >
           <img
-            src="/abt_robo.png"
+            src={`${import.meta.env.BASE_URL}abt_robo.png`}
             alt="AI Robot"
             className="w-full h-auto object-contain"
           />
