@@ -9,6 +9,7 @@ import zweli from '../assets/images/zweli.jpg';
 import vannessa from '../assets/images/vannessa.jpg';
 import prince from '../assets/images/prince.jpg';
 import emmanuel from '../assets/images/Emmanuel.jpg';
+import { asset } from '../lib/asset';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ const teamMembers = [
     name: 'AWANDE GUMBI',
     role: 'President',
     description: 'Biological Science Student leading our club\'s vision for interdisciplinary AI applications in life sciences.',
-    image: logo,
+    image: asset('/awande.jpeg'),
   },
   {
     name: 'ZWELIE LANGENI',
@@ -53,13 +54,13 @@ const teamMembers = [
     name: 'KOKETSO',
     role: 'ICT Student',
     description: 'ICT Student contributing to our technical initiatives and community projects.',
-    image: logo,
+    image: asset('/koketso.jpg'),
   },
   {
     name: 'CAYDEN JAYNEKE',
     role: 'ICT Student',
     description: 'ICT Student supporting our digital transformation and technical operations.',
-    image: logo,
+    image: asset('/caden.jpeg'),
   },
 ];
 

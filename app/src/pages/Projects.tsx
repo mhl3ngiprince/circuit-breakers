@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ExternalLink, Github, Cpu, LineChart, MessageCircle, Sprout, Brain, Eye } from 'lucide-react';
 import robot from '../assets/images/robot.png';
+import { topicImages } from '../sections/FocusAreas';
 
 const Projects = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const Projects = () => {
     {
       title: 'AI-Based Face Recognition',
       description: 'A smart security system using deep learning to identify individuals in real-time with 99.5% accuracy. Features include face detection, recognition, and tracking.',
-      image: '/Deep-removebg-preview.png',
+      image: topicImages.cybersecurity,
       category: 'Computer Vision',
       tags: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
       icon: Eye,
@@ -24,7 +25,7 @@ const Projects = () => {
     {
       title: 'Stock Market Prediction',
       description: 'Utilizing ML models to analyze financial trends and predict stock prices with high precision. Includes data visualization and risk analysis.',
-      image: '/finance-removebg-preview.png',
+      image: topicImages.fraud,
       category: 'Finance',
       tags: ['Python', 'Pandas', 'Scikit-learn', 'LSTM'],
       icon: LineChart,
@@ -35,7 +36,7 @@ const Projects = () => {
     {
       title: 'AI Chatbot with NLP',
       description: 'Developed an intelligent chatbot capable of human-like conversations using advanced NLP techniques. Supports multiple languages and contexts.',
-      image: '/nlp-removebg-preview.png',
+      image: topicImages.netflix,
       category: 'NLP',
       tags: ['Python', 'NLTK', 'Transformers', 'BERT'],
       icon: MessageCircle,
@@ -46,7 +47,7 @@ const Projects = () => {
     {
       title: 'Smart Agriculture',
       description: 'AI-powered system to optimize crop yields and monitor plant health using IoT sensors. Provides real-time recommendations to farmers.',
-      image: '/robotics-removebg-preview.png',
+      image: topicImages.automotive,
       category: 'IoT',
       tags: ['Python', 'IoT', 'Machine Learning', 'Sensors'],
       icon: Sprout,
@@ -57,7 +58,7 @@ const Projects = () => {
     {
       title: 'Medical Diagnosis Assistant',
       description: 'AI system that assists doctors in diagnosing diseases from medical images. Achieves high accuracy in detecting various conditions.',
-      image: '/meds-removebg-preview.png',
+      image: topicImages.healthcare,
       category: 'Healthcare',
       tags: ['Python', 'CNN', 'Medical Imaging', 'TensorFlow'],
       icon: Brain,
@@ -68,7 +69,7 @@ const Projects = () => {
     {
       title: 'Autonomous Robot Navigation',
       description: 'Robotics project focused on creating autonomous navigation systems for robots using computer vision and path planning algorithms.',
-      image: '/robot.png',
+      image: topicImages.automotive,
       category: 'Robotics',
       tags: ['Python', 'ROS', 'Computer Vision', 'SLAM'],
       icon: Cpu,
@@ -80,8 +81,8 @@ const Projects = () => {
 
   const categories = ['All', 'Computer Vision', 'NLP', 'Finance', 'IoT', 'Healthcare', 'Robotics'];
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -96,7 +97,7 @@ const Projects = () => {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900" />
-        
+
         <div className="relative z-10 container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <span className="tag mb-4">Our Work</span>
@@ -104,7 +105,7 @@ const Projects = () => {
               Featured <span className="text-emerald-400">Projects</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Explore the innovative machine learning projects developed by our talented 
+              Explore the innovative machine learning projects developed by our talented
               community of students at Circuit Breakers.
             </p>
           </div>
@@ -140,7 +141,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
 

@@ -1,14 +1,33 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Users, Lightbulb, Target, Award, ChevronRight } from 'lucide-react';
 import abt_robo from '../assets/images/abt_robo.png';
+import { asset } from '../lib/asset';
+import { topicImages } from '../sections/FocusAreas';
 
 const Home = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Some browsers block autoplay until the element is explicitly told to play
+    const attemptPlay = () => {
+      video.play().catch(() => {
+        /* Autoplay blocked - the poster image stays visible */
+      });
+    };
+
+    attemptPlay();
+    video.addEventListener('loadeddata', attemptPlay);
+    return () => video.removeEventListener('loadeddata', attemptPlay);
   }, []);
 
   const stats = [
@@ -44,25 +63,44 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
+        {/* Video Background (fixed to the section, behind all content) */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Poster / fallback image so the hero never looks empty */}
+          <img
+            src={asset('/robot.png')}
+            alt=""
+            aria-hidden="true"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoReady ? 'opacity-0' : 'opacity-100'}`}
+          />
+
+          {/* FlexClip animation, converted to looping video for smooth full-time playback */}
           <video
             ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
-            poster="/robot.png"
+            preload="auto"
+            aria-hidden="true"
+            tabIndex={-1}
+            poster={asset('/robot.png')}
+            onCanPlay={() => setVideoReady(true)}
+            onPlaying={() => setVideoReady(true)}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-11748-large.mp4" type="video/mp4" />
+            <source src={asset('/hero-bg.webm')} type="video/webm" />
+            <source src={asset('/hero-bg.mp4')} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+
+          {/* Readability overlays: top/bottom vignette + subtle green tint */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.75)_100%)]" />
+          <div className="absolute inset-0 bg-emerald-500/5 mix-blend-overlay" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom pt-20">
+        <div className="relative z-10 container-custom pt-24 pb-16">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
@@ -82,7 +120,7 @@ const Home = () => {
 
             {/* Description */}
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              Join Sol Plaatje University's premier AI and Machine Learning club. 
+              Join Sol Plaatje University's premier AI and Machine Learning club.
               Learn, build, and innovate with a community of passionate students.
             </p>
 
@@ -99,9 +137,9 @@ const Home = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
+                <div key={stat.label} className="text-center rounded-2xl bg-white/5 backdrop-blur-sm border-white/10 py-4 px-2">
                   <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-1">
                     {stat.value}
                   </div>
@@ -131,15 +169,15 @@ const Home = () => {
                 Pioneering the Future of <span className="gradient-text">Artificial Intelligence</span>
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Circuit Breakers is a student-led club at Sol Plaatje University dedicated to 
-                exploring the exciting world of Machine Learning and Artificial Intelligence. 
-                Our mission is to empower students with knowledge, hands-on experience, and 
+                Circuit Breakers is a student-led club at Sol Plaatje University dedicated to
+                exploring the exciting world of Machine Learning and Artificial Intelligence.
+                Our mission is to empower students with knowledge, hands-on experience, and
                 opportunities in the field of intelligent computing.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Through workshops, coding challenges, and real-world projects, we bridge the 
-                gap between theory and practical application. Whether you're a beginner or 
-                an experienced developer, Circuit Breakers is the perfect place to collaborate, 
+                Through workshops, coding challenges, and real-world projects, we bridge the
+                gap between theory and practical application. Whether you're a beginner or
+                an experienced developer, Circuit Breakers is the perfect place to collaborate,
                 learn, and innovate.
               </p>
               <Link to="/about" className="btn-secondary">
@@ -235,8 +273,8 @@ const Home = () => {
                 Comprehensive <span className="gradient-text">ML Services</span>
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                We offer a range of machine learning services designed to help students, 
-                researchers, and businesses harness the power of AI. From training programs 
+                We offer a range of machine learning services designed to help students,
+                researchers, and businesses harness the power of AI. From training programs
                 to consulting services, we've got you covered.
               </p>
               <ul className="space-y-4 mb-8">
@@ -288,19 +326,19 @@ const Home = () => {
               {
                 title: 'AI Face Recognition',
                 description: 'Smart security system using deep learning for real-time identification.',
-                image: '/Deep-removebg-preview.png',
+                image: topicImages.cybersecurity,
                 tags: ['Python', 'TensorFlow', 'OpenCV'],
               },
               {
                 title: 'Stock Market Predictor',
                 description: 'ML models analyzing financial trends to predict stock prices.',
-                image: '/finance-removebg-preview.png',
+                image: topicImages.fraud,
                 tags: ['Python', 'Pandas', 'Scikit-learn'],
               },
               {
                 title: 'AI Chatbot',
                 description: 'Intelligent chatbot with human-like conversations using NLP.',
-                image: '/nlp-removebg-preview.png',
+                image: topicImages.netflix,
                 tags: ['Python', 'NLTK', 'Transformers'],
               },
             ].map((project) => (
@@ -309,7 +347,7 @@ const Home = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
                 <div className="p-6">

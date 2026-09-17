@@ -3,50 +3,66 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Brain, Eye, MessageSquare, Bot, HeartPulse, TrendingUp, ArrowRight } from 'lucide-react';
+import { asset } from '../lib/asset';
 
 gsap.registerPlugin(ScrollTrigger);
+
+export const topicImages = {
+  netflix:
+    asset('/How-Netflix-is-Leveraging-AI-to-Transform-Streaming-1024x768.webp'),
+  cybersecurity: asset('/Cybersecurity-in-the-Age-of-AI.jpg'),
+  automotive: asset('/Automotive-electronics-D.jpg'),
+  fraud: asset('/Fraud-Detection.webp'),
+  healthcare: asset('/healthcare-using-ml.png.webp'),
+};
 
 const focusAreas = [
   {
     icon: Brain,
     title: 'Deep Learning & Neural Networks',
     description: 'Advanced multi-layer neural networks identifying complex data patterns. Computer systems modeled after the human brain, processing information through connected nodes.',
-    image: '/Deep-removebg-preview.png',
+    image: asset('/Deep-removebg-preview.png'),
+    topicImage: topicImages.netflix,
     color: 'from-purple-500 to-pink-500',
   },
   {
     icon: Eye,
     title: 'Computer Vision',
     description: 'Revolutionary image and speech recognition technologies transforming how machines interpret visual and auditory data with unprecedented accuracy.',
-    image: '/voice-removebg-preview.png',
+    image: asset('/voice-removebg-preview.png'),
+    topicImage: topicImages.automotive,
     color: 'from-blue-500 to-cyan-500',
   },
   {
     icon: MessageSquare,
     title: 'Natural Language Processing',
     description: 'Bridging human-computer communication through advanced language understanding, powered by transformer models and contextual intelligence.',
-    image: '/nlp-removebg-preview.png',
+    image: asset('/nlp-removebg-preview.png'),
+    topicImage: topicImages.fraud,
     color: 'from-green-500 to-emerald-500',
   },
   {
     icon: Bot,
     title: 'Robotics & Autonomous Systems',
     description: 'Next-generation robotics and autonomous vehicles reshaping transportation and automation across industries worldwide.',
-    image: '/robotics-removebg-preview.png',
+    image: asset('/robotics-removebg-preview.png'),
+    topicImage: topicImages.automotive,
     color: 'from-orange-500 to-red-500',
   },
   {
     icon: HeartPulse,
     title: 'Medical AI Research',
     description: 'Revolutionary healthcare applications using ML for diagnosis, treatment optimization, and breakthrough medical discoveries.',
-    image: '/meds-removebg-preview.png',
+    image: asset('/meds-removebg-preview.png'),
+    topicImage: topicImages.healthcare,
     color: 'from-red-500 to-rose-500',
   },
   {
     icon: TrendingUp,
     title: 'Financial AI & Analysis',
     description: 'Advanced financial modeling, algorithmic trading, and predictive analytics revolutionizing investment strategies and risk management.',
-    image: '/finance-removebg-preview.png',
+    image: asset('/finance-removebg-preview.png'),
+    topicImage: topicImages.cybersecurity,
     color: 'from-yellow-500 to-amber-500',
   },
 ];
@@ -109,9 +125,20 @@ const FocusAreas = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative"
             >
-              <div className="relative h-full p-6 rounded-2xl glass neon-border overflow-hidden card-hover">
+              <div className="relative h-full p-6 pt-0 rounded-2xl glass neon-border overflow-hidden card-hover">
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                {/* Topic Image Banner */}
+                <div className="relative -mx-6 mb-5 h-40 overflow-hidden">
+                  <img
+                    src={area.topicImage}
+                    alt={area.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${area.color} mix-blend-overlay opacity-40`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                </div>
                 
                 {/* Content */}
                 <div className="relative z-10">

@@ -7,6 +7,7 @@ import zweli from '../assets/images/zweli.jpg';
 import vannessa from '../assets/images/vannessa.jpg';
 import prince from '../assets/images/prince.jpg';
 import emmanuel from '../assets/images/Emmanuel.jpg';
+import { asset } from '../lib/asset';
 
 const About = () => {
   useEffect(() => {
@@ -18,7 +19,7 @@ const About = () => {
       name: 'Awande Gumbi',
       role: 'President',
       description: 'Biological Science Student leading our club\'s vision for interdisciplinary AI applications.',
-      image: logo,
+      image: asset('/awande.jpeg'),
     },
     {
       name: 'Zwelie Langeni',
@@ -54,13 +55,13 @@ const About = () => {
       name: 'Koketso',
       role: 'ICT Student',
       description: 'ICT Student contributing to our technical initiatives and community projects.',
-      image: logo,
+      image: asset('/koketso.jpg'),
     },
     {
       name: 'Cayden Jayneke',
       role: 'ICT Student',
       description: 'ICT Student supporting our digital transformation and technical operations.',
-      image: logo,
+      image: asset('/caden.jpeg'),
     },
   ];
 

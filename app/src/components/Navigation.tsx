@@ -21,6 +21,14 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -88,7 +96,11 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
               className="md:hidden p-2"
+              aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -103,7 +115,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white md:hidden">
+        <div id="mobile-navigation" className="fixed inset-0 z-40 bg-white md:hidden">
           <div className="flex flex-col items-center justify-center h-full gap-8">
             {navLinks.map((link) => (
               <Link

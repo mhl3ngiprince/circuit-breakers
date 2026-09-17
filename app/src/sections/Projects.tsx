@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github, Cpu, LineChart, MessageCircle, Sprout } from 'lucide-react';
+import { topicImages } from './FocusAreas';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,7 @@ const projects = [
     title: 'AI-Based Face Recognition',
     description: 'A smart security system using deep learning to identify individuals in real-time with 99.5% accuracy.',
     tech: ['Python', 'TensorFlow', 'OpenCV'],
-    image: '/logo.png',
+    image: topicImages.cybersecurity,
     github: '#',
     demo: '#',
     color: 'from-blue-500 to-cyan-500',
@@ -22,7 +23,7 @@ const projects = [
     title: 'Stock Market Prediction',
     description: 'Utilizing ML models to analyze financial trends and predict stock prices with high precision.',
     tech: ['Python', 'Pandas', 'Scikit-learn'],
-    image: '/finance-removebg-preview.png',
+    image: topicImages.fraud,
     github: '#',
     demo: '#',
     color: 'from-green-500 to-emerald-500',
@@ -32,7 +33,7 @@ const projects = [
     title: 'AI Chatbot with NLP',
     description: 'Developed an intelligent chatbot capable of human-like conversations using advanced NLP techniques.',
     tech: ['Python', 'NLTK', 'Transformers'],
-    image: '/nlp-removebg-preview.png',
+    image: topicImages.netflix,
     github: '#',
     demo: '#',
     color: 'from-purple-500 to-pink-500',
@@ -42,7 +43,7 @@ const projects = [
     title: 'Smart Agriculture',
     description: 'AI-powered system to optimize crop yields and monitor plant health using IoT sensors.',
     tech: ['Python', 'IoT', 'Machine Learning'],
-    image: '/robotics-removebg-preview.png',
+    image: topicImages.automotive,
     github: '#',
     demo: '#',
     color: 'from-orange-500 to-yellow-500',
@@ -114,7 +115,7 @@ const Projects = () => {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain p-8"
+                    className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   />

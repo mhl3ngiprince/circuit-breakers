@@ -45,14 +45,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@circuitbreakers.co.za',
-      link: 'mailto:info@circuitbreakers.co.za',
+      content: 'circuitbreakers.cb@gmail.com',
+      link: 'mailto:circuitbreakers.cb@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+27 (0) 53 491 0000',
-      link: 'tel:+270534910000',
+      content: '+27 81 896 7522',
+      link: 'tel:+27 81 896 7522',
     },
     {
       icon: MapPin,
@@ -65,7 +65,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: Instagram, href: 'https://www.instagram.com/spucircut?igsh=YTVxdXhjNmZrcHc2', label: 'Instagram' },
     { icon: MessageCircle, href: 'https://www.tiktok.com/@spu_circuitbreakers?_t=ZM-8ujSYcgFz8w&_r=1', label: 'TikTok' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/circuitcircuitbreakers-cb-5b3033368/', label: 'LinkedIn' },
     { icon: Github, href: '#', label: 'GitHub' },
   ];
 

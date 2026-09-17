@@ -39,7 +39,7 @@ const socialLinks = [
   { icon: Twitter, href: '#', label: 'Twitter' },
   { icon: MessageCircle, href: 'https://www.tiktok.com/@spu_circuitbreakers?_t=ZM-8ujSYcgFz8w&_r=1', label: 'TikTok' },
   { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/circuitcircuitbreakers-cb-5b3033368/', label: 'LinkedIn' },
 ];
 
 const Footer = () => {
@@ -109,11 +109,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-white/60 text-sm">
                 <Mail className="w-4 h-4 text-green-400" />
-                <span>info@circuitbreakers.co.za</span>
+                <span>circuitbreakers.cb@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-white/60 text-sm">
                 <Phone className="w-4 h-4 text-green-400" />
-                <span>+27 (0) 53 491 0000</span>
+                <span>+27 81 896 7522</span>
               </div>
             </motion.div>
           </div>
