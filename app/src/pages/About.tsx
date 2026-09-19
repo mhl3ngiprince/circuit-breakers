@@ -55,7 +55,7 @@ const About = () => {
       name: 'Koketso',
       role: 'ICT Student',
       description: 'ICT Student contributing to our technical initiatives and community projects.',
-      image: asset('/koketso.jpg'),
+      image: logo,
     },
     {
       name: 'Cayden Jayneke',
