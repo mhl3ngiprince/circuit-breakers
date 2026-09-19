@@ -14,8 +14,8 @@ const projects = [
     description: 'A smart security system using deep learning to identify individuals in real-time with 99.5% accuracy.',
     tech: ['Python', 'TensorFlow', 'OpenCV'],
     image: topicImages.cybersecurity,
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/mhl3ngiprince/AI-Face-Recognition',
+    demo: 'https://mhl3ngiprince.github.io/AI-Face-Recognition/',
     color: 'from-blue-500 to-cyan-500',
   },
   {
@@ -24,8 +24,8 @@ const projects = [
     description: 'Utilizing ML models to analyze financial trends and predict stock prices with high precision.',
     tech: ['Python', 'Pandas', 'Scikit-learn'],
     image: topicImages.fraud,
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/mhl3ngiprince/Stock-Market-Prediction',
+    demo: 'https://mhl3ngiprince.github.io/Stock-Market-Prediction/',
     color: 'from-green-500 to-emerald-500',
   },
   {
@@ -34,8 +34,8 @@ const projects = [
     description: 'Developed an intelligent chatbot capable of human-like conversations using advanced NLP techniques.',
     tech: ['Python', 'NLTK', 'Transformers'],
     image: topicImages.netflix,
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/mhl3ngiprince/AI-Chatbot-with-NLP',
+    demo: 'https://mhl3ngiprince.github.io/AI-Chatbot-with-NLP/',
     color: 'from-purple-500 to-pink-500',
   },
   {
@@ -44,8 +44,8 @@ const projects = [
     description: 'AI-powered system to optimize crop yields and monitor plant health using IoT sensors.',
     tech: ['Python', 'IoT', 'Machine Learning'],
     image: topicImages.automotive,
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/mhl3ngiprince/Smart-Agriculture-',
+    demo: 'https://mhl3ngiprince.github.io/Smart-Agriculture-/',
     color: 'from-orange-500 to-yellow-500',
   },
 ];
