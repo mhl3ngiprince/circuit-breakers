@@ -180,9 +180,9 @@ const Hero = () => {
           className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
         >
           {[
-            { value: '500+', label: 'Members' },
-            { value: '150+', label: 'Projects' },
-            { value: '50+', label: 'Partners' },
+            { value: '120+', label: 'Members' },
+            { value: '6+', label: 'Projects' },
+            { value: '5+', label: 'Partners' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
